@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="icon" href="images/logo.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/logo.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form class="login-form" id="loginForm" action="#">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button type="submit" id="loginBtn">Login</button>
+    </form>
+    <p id="errorMessage" class="error-message"></p>
+  </div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Replace these with your actual validation logic (should be on the server-side in a real scenario)
+        if (username === "user" && password === "password") {
+            
+            // Replace 'target_page.html' with the URL of your target webpage
+            window.location.href = 'Dashboard.php';
+        } else {
+            // Display error message
+            document.getElementById("errorMessage").textContent = "Incorrect username or password. Please try again.";
+        }
+    });
+</script>
+
+</body>
+</html>

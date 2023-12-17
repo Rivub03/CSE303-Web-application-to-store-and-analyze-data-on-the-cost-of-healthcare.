@@ -1,0 +1,109 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Logout button styles */
+.logout-btn {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #aaa;
+    color: #fff;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    background-color: #ff8c00; /* Updated background color */
+}
+
+/* Data section styles */
+.data-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* Form container styles */
+.form-container {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #fff;
+    color: #ff8c00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+/* Footer styles */
+footer {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    font-size: 14px;
+    color: #666;
+}

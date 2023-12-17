@@ -1,0 +1,147 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+nav ul li a:hover {
+    background-color: #aaa;
+    color: #fff;
+}
+
+/* Additional CSS for the first section */
+.first-section {
+    background-color: #ff8c00; /* Exciting background color (you can change it to your preferred color) */
+    color: #fff; /* Text color */
+    padding: 50px 0; /* Padding for the section */
+    text-align: center; /* Align text to the center */
+}
+
+.container {
+    max-width: 800px; /* Limit content width */
+    margin: 0 auto; /* Center the container */
+}
+
+h1 {
+    font-size: 2.5em; /* Adjust heading font size */
+    margin-bottom: 20px; /* Space between heading and subheading */
+}
+
+h2 {
+    font-size: 1.5em; /* Adjust subheading font size */
+    margin-bottom: 30px; /* Space between subheading and button */
+}
+
+button {
+    padding: 10px 20px; /* Button padding */
+    font-size: 1em; /* Button font size */
+    background-color: #fff; /* Button background color */
+    color: #ff8c00; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Button border radius */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Additional CSS for the second section */
+.second-section {
+    padding: 50px 0; /* Padding for the section */
+    text-align: center; /* Align text to the center */
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.team-member {
+    width: 250px;
+    margin: 15px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Section styles (customize as needed) */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
