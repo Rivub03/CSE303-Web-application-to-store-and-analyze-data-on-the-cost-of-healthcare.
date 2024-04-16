@@ -8,60 +8,92 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Project 329</title>
-    <link rel="icon" href="images/logo.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="images/logo.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="cost.css">
-</head>
-<body>
+    <link rel="icon" href="images/logo.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="images/logo.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cost.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo">Project 329</div>
-        <nav>
-            <ul><li><a href="index.html">Home</a></li></ul>
-        </nav>
+      <div class="logo">Project 329</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section>
-        <div class="form-container">
-            <form id="dataForm" method="post" action="input.php">
-                <div class="form-row">
-                    <label for="hospital_type">Hospital Type:</label>
-                    <select name="hospital_type" id="hospital_type">
-                        <option value="hospital_1">Government</option>
-                        <option value="hospital_2">Private</option>
-                        <option value="hospital_3">Chamber/Clinic</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label for="speciality">Speciality:</label>
-                    <select name="speciality" id="speciality">
-                        <option value="speciality_1">Cardiology</option>
-                        <option value="speciality_2">Urology</option>
-                        <option value="speciality_3">Dermatology</option>
-                        <option value="speciality_4">Radiologist</option>
-                        <option value="speciality_5">Pediatrician</option>
-                        <option value="speciality_6">Nuerologist</option>
-                        <option value="speciality_7">Gynacologist</option>
+      <h1 class="desire">Look for Your Desired _________</h1>
 
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-                <div class="form-row">
-                    <label for="price">Price:</label>
-                    <input type="number" id="price" name="price" min="0">
-                </div>
-                <div class="form-row">
-                    <input type="submit" value="Show Prices">
-                </div>
-            </form>
-        </div>
+      <div class="form-container">
+        <form id="dataForm" method="post" action="input.php">
+          <div class="form-row">
+            <label for="hospital_type">Hospital Type:</label>
+            <select name="hospital_type" id="hospital_type">
+              <option value="government">Government</option>
+              <option value="private">Private</option>
+              <option value="chamber">Chamber/Clinic</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="speciality">Speciality:</label>
+            <select name="speciality" id="speciality">
+              <option value="cardiologyist">Cardiologist</option>
+              <option value="urologist">Urologist</option>
+              <option value="dermatologist">Dermatologist</option>
+              <option value="radiologist">Radiologist</option>
+              <option value="pediatrician">Pediatrician</option>
+              <option value="neurologist">Neurologist</option>
+              <option value="gynecologist">Gynecologist</option>
 
-        <!-- New table section -->
-        <div class="table-container" style="padding: 20px;">
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="location">Location:</label>
+            <select name="location" id="location">
+              <option value="dhaka">Dhaka</option>
+              <option value="chittagong">Chittagong</option>
+              <option value="sylhet">Sylhet</option>
+              <option value="rajshahi">Rajshahi</option>
+              <option value="barisal">Barisal</option>
+              <option value="khulna">Khulna</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="rating">Rating:</label>
+            <select name="rating" id="rating">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" min="0" />
+          </div>
+          <div class="form-row">
+            <input type="submit" value="Show Prices" />
+          </div>
+        </form>
+
+        <img class="hospital" src="images/hospital.png" alt="" />
+      </div>
+
+      <h1 class="desire">Best Matches</h1>
+
+      <!-- New table section -->
+      <div class="table-container" style="padding: 20px;">
             <table class="data-table">
                 <thead>
                     <tr>
