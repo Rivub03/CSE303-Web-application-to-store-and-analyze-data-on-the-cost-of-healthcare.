@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2024 at 06:44 PM
+-- Generation Time: Apr 17, 2024 at 11:33 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -65,7 +65,13 @@ INSERT INTO `doctor` (`DID`, `HID`, `Name`, `Specialization`, `Price`) VALUES
 (1, 1, 'Rivu', 'Cardiologist', 300),
 (2, 1, 'Rafi', 'Neurologist', 200),
 (3, 2, 'Sarara', 'Dermatologist', 500),
-(3, 3, 'Aurpa', 'Cardiologist', 500);
+(3, 3, 'Aurpa', 'Cardiologist', 500),
+(5, 18, 'Anika', 'Pediatrician', 400),
+(6, 18, 'Rahim', 'Orthopedic Surgeon', 600),
+(7, 19, 'Sadia', 'Gynecologist', 700),
+(8, 21, 'Kabir', 'Oncologist', 800),
+(9, 3, 'Liza', 'Psychiatrist', 550),
+(10, 4, 'Farhan', 'Urologist', 900);
 
 -- --------------------------------------------------------
 
@@ -86,14 +92,18 @@ CREATE TABLE `healthcareprovider` (
 --
 
 INSERT INTO `healthcareprovider` (`ID`, `Name`, `Address`, `Type`, `Price`) VALUES
-(1, 'Apollo', 'Mohammadpur', 'Private', 1000),
-(2, 'Square', 'Mirpur', 'Private', 2000),
+(1, 'Apollo', 'Mohammadpur, Dhaka', 'Private', 1000),
+(2, 'Square', 'Mirpur, Dhaka', 'Private', 2000),
 (3, 'Ibne Sina', 'Banglamotor', 'Private', 700),
 (4, 'Evercare', 'Bashundhara', 'Private', 2000),
 (5, 'Mothercare', 'Lalmatia', 'Private', 500),
 (6, 'Al Hilal', 'Kazipara', 'Private', 900),
-(8, 'abcd', 'asdaf', 'Private', 400),
-(9, 'Labaid', 'Dhanmondi', 'Private', 2000);
+(9, 'Labaid', 'Dhanmondi', 'Private', 2000),
+(18, 'HealthPlus', 'Gulshan, Dhaka', 'Private', 1500),
+(19, 'CareFirst', 'Uttara, Dhaka', 'Private', 800),
+(20, 'Wellness Center', 'Banani, Dhaka', 'Private', 1200),
+(21, 'Prime Hospital', 'Baridhara, Dhaka', 'Private', 1800),
+(22, 'Sunrise Clinic', 'Tejgaon, Dhaka', 'Private', 600);
 
 --
 -- Indexes for dumped tables
@@ -109,7 +119,8 @@ ALTER TABLE `bill`
 -- Indexes for table `doctor`
 --
 ALTER TABLE `doctor`
-  ADD PRIMARY KEY (`DID`,`HID`);
+  ADD PRIMARY KEY (`DID`,`HID`),
+  ADD KEY `FK` (`HID`);
 
 --
 -- Indexes for table `healthcareprovider`
@@ -126,6 +137,16 @@ ALTER TABLE `healthcareprovider`
 --
 ALTER TABLE `bill`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `doctor`
+--
+ALTER TABLE `doctor`
+  ADD CONSTRAINT `FK` FOREIGN KEY (`HID`) REFERENCES `healthcareprovider` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
