@@ -9,11 +9,19 @@
         }
     
     try{
-        $query0 = " SELECT Name, Address, Type, Price FROM healthcareprovider WHERE Type = $hospital_type ";
-        $result = mysqli_query($connection,$query0);
-        $query1 = " SELECT Name, Specialization, Price FROM Doctor WHERE Specialization = $speciality";
-        $result1 = mysqli_query($connection,$query1);
-        //$query2 = "SELECT "//
+        $query = " SELECT * FROM `healthcareprovider` WHERE `ID` IS NOT NULL AND `Type` = '$hospital_type' 
+        AND `Address` LIKE '%$location%' AND `Price` <= '$price' ";
+        $result = mysqli_query($connection, $query);
+        $query1 = " SELECT * FROM `doctor` WHERE `Specialization` LIKE '%$speciality%' AND `Price` <= '$price'";
+        $result1 = mysqli_query($connection, $query1);
+        
+        /*$query2 = "SELECT * FROM `healthcareprovider` WHERE `ID` IS NOT NULL AND `Address` LIKE '%$location%' ";
+        $result2 =  mysqli_query($connection, $query2);
+        $query3 = "SELECT * FROM `healthcareprovider` WHERE `ID` IS NOT NULL AND `Price` <= '$price'";
+        $result3 = mysqli_query($connection, $query3);
+        $query4 = "SELECT * FROM `doctor` WHERE `DID` IS NOT NULL AND `HID` IS NOT NULL AND `Price` <= '$price'";
+        $result3 = mysqli_query($connection, $query4);
+        */
     }
     catch (mysqli_sql_exception){
         debug_print_backtrace();
@@ -50,16 +58,6 @@
     </header>
 
     <section>
-      <p> <?php
-        echo $hospital_type;
-        echo $speciality;
-        echo $location;
-        echo $rating;
-        echo $price;
-        echo $_POST["hospital_type"];
-        echo $_POST["speciality"];
-      ?>
-      </p>
         
       <h1 class="desire">Best Matches</h1>
 
@@ -68,17 +66,12 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>Hospital ID</th>
+              <th>Hospital Name</th>
+              <th>Hospital Address</th>
+              <th>Hospital Type</th>
+              <th>Hospital Price</th>
+              <th>Get Appointment</th>
             </tr>
           </thead>
           <tbody>
@@ -86,6 +79,7 @@
             
             try{                        
                 while($row=mysqli_fetch_assoc($result)){
+                    $HID = $row['ID'];
                     $HName = $row['Name'];
                     $HAddress = $row['Address'];
                     $HType = $row['Type'];
@@ -94,6 +88,7 @@
             
             ?>
             <tr>
+                <td><?php echo $HID ?></td>
                 <td><?php echo $HName ?></td>
                 <td><?php echo $HAddress?></td>
                 <td><?php echo $HType ?></td>
@@ -112,11 +107,30 @@
             }
                     ?>
             <tr>
-              <td>Data 4</td>
-              <td>Data 5</td>
-              <td>Data 6</td>
+                <th>Doctor ID</th>
+                <th>Hospital ID</th>
+                <th>Doctor Name</th>
+                <th>Doctor Specialization </th>
+                <th>Cost of Visit </th>
             </tr>
-            <!-- ... -->
+            <?php 
+                while($row1=mysqli_fetch_assoc($result1)){
+                    $DID = $row1['DID'];
+                    $HID = $row1['HID'];
+                    $DName = $row1['Name'];
+                    $DSpecialization = $row1['Specialization'];
+                    $DPrice = $row1['Price'];
+                ?>        
+            <tr>
+                <td><?php echo $DID ?></td>
+                <td><?php echo $HID ?></td>
+                <td><?php echo $DName?></td>
+                <td><?php echo $DSpecialization ?></td>
+                <td><?php echo $DPrice ?></td>
+            </tr>
+            <?php 
+                }  
+            ?>      
           </tbody>
         </table>
       </div>
