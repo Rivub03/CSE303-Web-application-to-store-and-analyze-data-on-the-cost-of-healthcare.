@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Appointment System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Doctor Appointment System</h1>
+    </header>
+    <main>
+      <section class="search-section">
+        <h2>Search for Doctors</h2>
+        <form>
+          <label for="specialty">Specialty:</label>
+          <select id="specialty">
+            <option value="all">All Specialties</option>
+            <option value="cardiologist">Cardiologist</option>
+            <option value="dermatologist">Dermatologist</option>
+            <!-- Add more specialties as needed -->
+          </select>
+          <label for="location">Location:</label>
+          <input type="text" id="location" placeholder="Enter location" />
+          <label for="ratings">Ratings:</label>
+          <input
+            type="number"
+            id="ratings"
+            min="0"
+            max="5"
+            step="0.1"
+            placeholder="Minimum rating"
+          />
+          <label for="budget">Budget:</label>
+          <input type="number" id="budget" placeholder="Enter budget" />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="doctor-details">
+        <h2>Doctor Details</h2>
+        <!-- Doctor details will be displayed dynamically here -->
+        <div class="doctor-card">
+          <h3>Dr. John Doe</h3>
+          <p>Specialty: Cardiologist</p>
+          <p>Experience: 10 years</p>
+          <p>Ratings: 4.8</p>
+          <p>Consultation Fee: $100</p>
+          <p>Availability: Monday to Friday</p>
+          <button class="btn-book-appointment">Book Appointment</button>
+        </div>
+        <!-- Add more doctor cards dynamically -->
+      </section>
+
+      <section class="appointment-form" style="display: none">
+        <h2>Book Appointment</h2>
+        <form>
+          <label for="patient-name">Your Name:</label>
+          <input
+            type="text"
+            id="patient-name"
+            placeholder="Enter your name"
+            required
+          />
+          <label for="appointment-date">Preferred Date:</label>
+          <input type="date" id="appointment-date" required />
+          <label for="appointment-time">Preferred Time:</label>
+          <input type="time" id="appointment-time" required />
+          <button type="submit">Confirm Appointment</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Doctor Appointment System</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -43,7 +43,7 @@ header {
 /* Main content styles */
 main {
     padding: 20px;
-    background-color: #ff8c00; /* Updated background color */
+    background-color: #6096ba;
 }
 
 /* Data section styles */
@@ -92,7 +92,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff8c00;
+    background-color: #6096ba;
     color: #fff;
 }
 

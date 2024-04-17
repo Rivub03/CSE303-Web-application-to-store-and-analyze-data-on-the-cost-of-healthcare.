@@ -36,7 +36,12 @@
             <h1>Admin Dashboard</h1>
         </div>
         <div class="header-right">
+            <button id = "managebillbutton"> Manage Bill </button>
+            <button id = "addpromo"> Add Promo </button>
             <a href="#" class="logout-btn">Logout</a>
+        <nav>
+            
+        </nav>
         </div>
     </header>
     <main>
@@ -88,6 +93,10 @@
                     <button type="submit">Submit</button>
                 </form>
         </section>
+
+    <section>
+        
+    </section>
     </main>
 
     <footer>
@@ -104,6 +113,15 @@
             logoutButton.addEventListener('click', function(event) {
                 event.preventDefault();
                 window.location.href = 'index.html';
+            });
+        const addpromobutton = document.getElementById("addpromo");
+        addpromobutton.addEventListener('click', function() {
+            window.location.href = 'hcproviders.html';
+            });
+
+        const managebillbutton = document.getElementById("managebillbutton");
+        managebillbutton.addEventListener('click', function() {
+            window.location.href = 'managebill.html';
             });
         });
     </script>
@@ -199,6 +217,8 @@
 
         }
     }
+
+
 
     mysqli_close($connection);
 ?>
