@@ -31,7 +31,7 @@
     </header>
 
     <section>
-      <h1 class="desire">Look for Your Desired _________</h1>
+      <h1 class="desire">Look for Your Desired Healthcare</h1>
 
       <div class="form-container">
         <form id="dataForm" method="post" action="input.php">
@@ -46,7 +46,7 @@
           <div class="form-row">
             <label for="speciality">Speciality:</label>
             <select name="speciality" id="speciality">
-              <option value="cardiologyist">Cardiologist</option>
+              <option value="cardiologist">Cardiologist</option>
               <option value="urologist">Urologist</option>
               <option value="dermatologist">Dermatologist</option>
               <option value="radiologist">Radiologist</option>
